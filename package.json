@@ -1,5 +1,8 @@
 {
   "name": "ts-user-search",
+  "git": "https://github.com/prabhat-cn/typescript-user-search.git",
+  "tut": "https://youtu.be/E0BqKhZA6Ao",
+  "netlify": "https://ts-user-search.netlify.app/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
