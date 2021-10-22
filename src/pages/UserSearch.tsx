@@ -22,6 +22,15 @@ const UserSearch: React.FC = () => {
     // "findUsers" can be object of array | undefind
     setUserList(findUsers);
   };
+
+  const onKeyDown = (event: React.KeyboardEvent<HTMLDivElement>): void => {
+    // 'keypress' event misbehaves on mobile so we track 'Enter' key via 'keydown' event
+    if (event.key === 'Enter' || event.key === 'NumpadEnter') {
+      event.preventDefault();
+      event.stopPropagation();
+      handleOnclick();
+    }
+  };
   return (
     <div>
       <div className="title">
@@ -35,6 +44,7 @@ const UserSearch: React.FC = () => {
             //after delete the name on input field reset
             setUserList(users);
           }}
+          onKeyDown={onKeyDown}
           type="text"
           className="search__input"
           placeholder="Search user.."
